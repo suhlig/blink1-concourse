@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -euo pipefail
+IFS=$'\n\t'
+
+echo Installing brew bundle...
+brew bundle
+echo Done.
+
+echo -n Installing go dependencies...
+go mod download
+echo Done.

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -euo pipefail
+IFS=$'\n\t'
+readonly SCRIPTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd)"
+
+echo -n Building...
+(
+  cd cmd/blink1
+  GOBIN="$SCRIPTS_DIR/../bin" go install
+)
+echo Done.

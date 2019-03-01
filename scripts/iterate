@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -euo pipefail
+IFS=$'\n\t'
+
+while true; do
+  find . -name '*.go' | entr bash -c 'scripts/build && bin/blink1 -h'
+done
